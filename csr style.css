@@ -1,0 +1,476 @@
+body, html {
+    font-family: Poppins, sans-serif;
+    margin: 0;
+    padding: 0;
+    height: 100%; /* Ensure no extra space around the viewport */
+    overflow-x: hidden; /* Prevent horizontal scroll */
+}
+
+
+
+
+
+
+
+
+/*All Section Title Styling */
+.section-title {
+    font-size: 36px;
+    font-weight: bold;
+    color: #056579;
+    margin-bottom: 10px;
+    padding-top: 22px;
+}
+
+/* Horizontal line under the headline */
+.section-hr {
+    width: 60px;
+    height: 4px;
+    background-color: #eb5204;
+    border: none;
+    margin: 0 auto;
+    margin-top: 10px;
+    margin-bottom: 30px;
+}
+.headline-underline{
+    width: 60px;
+    height: 4px;
+    background-color: #eb5204;
+}
+
+
+
+
+
+
+
+
+
+/* Sticky Navbar */
+.sticky-navbar {
+    position: sticky;
+    top: 0;
+    z-index: 1000; /* Ensure it stays on top of other content */
+}
+
+/* Navbar Styles */
+.navbar {
+    background: linear-gradient(to right, #ffffff, #cacaca); /* Gradient background */
+    color: white; /* Optional: Change text color to white for better contrast */
+}
+
+/* Navbar Brand Padding for Desktop */
+@media (min-width: 1024px) {
+    .navbar-brand {
+        padding-left: 40px;
+    }
+}
+
+/* Navbar Links */
+.navbar-nav .nav-link {
+    color: #056579!important; /* Change the link color */
+    font-weight: bold;
+    font-size: 11px;
+    border-right: 1px solid #056579; /* Vertical line between links */
+}
+
+/* Remove border from the last item */
+.navbar-nav .nav-item:last-child .nav-link {
+    border-right: none;
+}
+
+/* Navbar Links Hover Effect */
+.navbar-nav .nav-link:hover {
+    color: #eb5204!important; /* Change link color on hover */
+}
+
+/* Mobile Navigation Bar Styles */
+.navbar-mobile {
+    position: fixed;
+    top: 0;
+    right: -250px; /* Initially off-screen */
+    width: 250px;
+    height: 100%;
+    background-color: #b0b0b0d7;
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.5);
+    transition: right 0.3s ease;
+    z-index: 1001; /* Above overlay */
+    padding: 20px;
+}
+
+/* Mobile Navigation List */
+.navbar-mobile ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+/* Mobile Navigation Item Styles */
+.navbar-mobile ul li {
+    margin: 0; /* Remove margin between list items */
+}
+
+.navbar-mobile ul li a {
+    padding: 8px 10px; /* Reduce padding for tighter spacing */
+    font-size: 16px; /* Adjust font size */
+    line-height: 0.9 !important; /* Force line height with !important */
+    display: block;
+}
+
+/* Mobile Submenu Styling */
+.mobile-submenu li {
+    padding-left: 15px;
+}
+
+/* Mobile Navigation Link Hover Effect */
+.navbar-mobile a:hover {
+    color: #eb5204; /* Change hover color */
+    transition: color 0.3s ease; /* Smooth transition effect */
+}
+
+.navbar-mobile a {
+    text-decoration: none;
+    color: #ffffff; /* Use your primary color */
+    font-weight: bold;
+}
+
+/* Social Icons */
+.social-icons {
+    display: flex; /* Use flexbox for alignment */
+    justify-content: center; /* Center the icons horizontally */
+    margin-top: 20px; /* Optional: Add some space above */
+}
+
+.social-icons a {
+    margin: 0 10px; /* Equal spacing for icons */
+}
+
+/* Overlay Styles */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Dark transparent */
+    display: none; /* Hidden by default */
+    z-index: 1000; /* Below navbar */
+}
+
+/* Close Button Styles */
+.close-btn {
+    background: none;
+    border: none;
+    font-size: 30px;
+    color: white;
+    cursor: pointer;
+}
+
+/* Slogan Text Styling */
+.navbar-slogan {
+    font-family: 'Proxima Nova Condensed', sans-serif;
+    font-size: 1.5rem; /* Adjust size for desktop */
+    color: #056579;
+    text-align: center;
+    margin: 0;
+    font-weight: 711;
+}
+
+/* Mobile View Adjustments */
+@media (max-width: 768px) {
+    .navbar-center {
+        position: absolute;
+        left: 53%;
+        transform: translateX(-50%);
+        top: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    /* Make slogan text smaller for mobile */
+    .navbar-slogan {
+        font-size: 1.1rem; /* Adjust size for mobile */
+    }
+}
+
+/* Hide the slogan on larger screens if needed */
+@media (min-width: 769px) {
+    .navbar-center {
+        display: none;
+    }
+}
+
+/* Dropdown Menu Styles */
+.navbar .dropdown-menu {
+    background-color: #ffffff; /* White background */
+    border: none; /* Remove border */
+    border-radius: 8px; /* Rounded corners */
+    padding: 10px 0;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1); /* Add shadow */
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px); /* Slight move effect */
+    transition: all 0.3s ease-in-out;
+}
+
+/* Submenu for "Scholarships" */
+.dropdown-submenu {
+    position: relative;
+}
+
+.dropdown-submenu .dropdown-menu {
+    display: none; /* Hide submenu by default */
+    position: absolute;
+    top: 0;
+    left: 100%; /* Position the submenu to the right */
+    margin-top: 0;
+    border-radius: 5px;
+    background-color: #ffffff;
+}
+
+/* Show submenu when hovering over "Scholarships" */
+.dropdown-submenu:hover .dropdown-menu {
+    display: block; /* Show submenu on hover */
+}
+
+/* Dropdown Item Styles */
+.navbar .dropdown-item {
+    color: #1a689e; /* Your brand color for text */
+    padding: 10px 20px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.navbar .dropdown-item:hover {
+    background-color: #056579; /* Hover background */
+    color: #fff; /* Hover text color */
+    border-radius: 5px; /* Rounded hover */
+}
+
+/* Dropdown Arrow Rotation on Toggle */
+.navbar .dropdown-toggle::after {
+    transition: transform 0.3s;
+}
+
+/* Show dropdown on hover (desktop) */
+@media (min-width: 1024px) {
+    .navbar .dropdown:hover .dropdown-menu {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0); /* Bring it up smoothly */
+    }
+
+    .navbar .dropdown:hover .dropdown-toggle::after {
+        transform: rotate(180deg); /* Rotate the arrow when open */
+    }
+}
+
+
+
+
+
+
+
+
+
+/* Floating WhatsApp Icon */
+.floating-icons {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 999;
+}
+
+.whatsapp-icon img {
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+.whatsapp-icon img:hover {
+    transform: scale(1.1);
+}
+
+/* Call Options (Initially Hidden) */
+.call-options {
+    display: none;
+    position: fixed;
+    bottom: 80px;
+    right: 20px;
+    z-index: 999;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 10px;
+}
+
+.call-button {
+    display: block;
+    padding: 10px 20px;
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-bottom: 5px;
+    display: flex;
+    align-items: center;
+    transition: background-color 0.3s ease;
+}
+
+.call-button i {
+    margin-right: 10px;
+}
+
+/* WhatsApp Call Button */
+.whatsapp-call {
+    background-color: #25d366;
+}
+
+.whatsapp-call:hover {
+    background-color: #1ebe56;
+}
+
+/* Direct Call Button */
+.direct-call {
+    background-color: #056579;
+}
+
+.direct-call:hover {
+    background-color: #045265;
+}
+
+/* Show Call Options when clicked */
+.show-options {
+    display: block;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+section {
+    background-color: #fff;
+    padding: 40px;
+    
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+h2, h3 {
+    text-align: center;
+    color: #333;
+}
+
+h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+h3 {
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+    color: #555;
+}
+
+p {
+    font-size: 1rem;
+    margin-bottom: 20px;
+    color: #666;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+/* Gallery Styles */
+.gallery-container {
+    margin-top: 50px;
+    text-align: center;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 15px;
+    margin-bottom: 50px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.gallery-grid img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+    cursor: pointer;
+}
+
+.gallery-grid img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Modal for zoomable images */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    padding-top: 90px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.modal-content {
+    margin: auto;
+    display: block;
+    max-width: 72%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.modal-content:hover {
+    transform: scale(1.02);
+}
+
+/* Close button */
+.close {
+    position: absolute;
+    top: 50px;
+    right: 50px;
+    color: white;
+    font-size: 35px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+.top{
+    margin-top: 50px;
+    background-color: #f4f4f4;
+}
+
+
+
+
+
+
